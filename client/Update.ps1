@@ -1,6 +1,6 @@
 ﻿# ==================================================================
 # mpMiner updater
-# Current client version: 0.0.38
+# Current client version: 0.0.39
 # ==================================================================
 function Unzip($zipfile, $outdir) {
 
@@ -31,20 +31,17 @@ function DeleteOldFiles() {
     Write-Host "Brišem staro verzijo..."
 
     if ([System.IO.File]::Exists("$PSScriptRoot\mpMiner.exe")) {
-        Remove-Item "$PSScriptRoot\ezMiner.exe" -Force
+        Remove-Item "$PSScriptRoot\mpMiner.exe" -Force
     }
     if ([System.IO.File]::Exists("$PSScriptRoot\appsettings.json")) {
         Remove-Item "$PSScriptRoot\appsettings.json" -Force
     }
     if ([System.IO.File]::Exists("$PSScriptRoot\mpMiner.exe.config")) {
-        Remove-Item "$PSScriptRoot\ezMiner.exe.config" -Force
+        Remove-Item "$PSScriptRoot\mpMiner.exe.config" -Force
     }
     if ([System.IO.Directory]::Exists("$PSScriptRoot\lib")) {
         Remove-Item "$PSScriptRoot\lib" -Force -Recurse
     }
-    # Remove-Item "$PSScriptRoot\appsettings.json" -Force
-    # Remove-Item "$PSScriptRoot\ezMiner.exe.config" -Force
-    # Remove-Item "$PSScriptRoot\lib" -Force -Recurse
     Write-Host "Stara verzija odstranjena."
     Write-Host ""
 }
@@ -82,7 +79,7 @@ DeleteOldFiles
 Start-Sleep -s 2
 Unzip $zipFile $unzipFolder
 
-# Start ezMiner.exe with /update argument
+# Start mpMiner.exe with /update argument
 Start-Sleep -s 2
 $exeFile = "$PSScriptRoot\mpMiner.exe"
 Start-Process $exeFile "/update"
