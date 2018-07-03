@@ -1,6 +1,6 @@
 ﻿# ==================================================================
 # mpMiner updater
-# Current client version: 0.0.37
+# Current client version: 0.0.38
 # ==================================================================
 function Unzip($zipfile, $outdir) {
 
@@ -58,7 +58,7 @@ Write-Host ""
 Write-Host "Posodabjam mpMiner...."
 Start-Sleep -s 3
 #Write-Host "Fetching update data from API..."
-$url = "http://52.166.117.97/api/desktop/getVersion"
+$url = "http://mpminer.com/api/desktop/getVersion"
 $apiResponse = Invoke-RestMethod -Method Get -Uri $url
 
 #Write-Host "Response: ${apiResponse.payload}"
