@@ -1,6 +1,6 @@
 ﻿# ==================================================================
-# ezMiner updater
-# Current client version: 0.0.36
+# mpMiner updater
+# Current client version: 0.0.37
 # ==================================================================
 function Unzip($zipfile, $outdir) {
 
@@ -30,13 +30,13 @@ function DeleteOldFiles() {
     Write-Host ""
     Write-Host "Brišem staro verzijo..."
 
-    if ([System.IO.File]::Exists("$PSScriptRoot\ezMiner.exe")) {
+    if ([System.IO.File]::Exists("$PSScriptRoot\mpMiner.exe")) {
         Remove-Item "$PSScriptRoot\ezMiner.exe" -Force
     }
     if ([System.IO.File]::Exists("$PSScriptRoot\appsettings.json")) {
         Remove-Item "$PSScriptRoot\appsettings.json" -Force
     }
-    if ([System.IO.File]::Exists("$PSScriptRoot\ezMiner.exe.config")) {
+    if ([System.IO.File]::Exists("$PSScriptRoot\mpMiner.exe.config")) {
         Remove-Item "$PSScriptRoot\ezMiner.exe.config" -Force
     }
     if ([System.IO.Directory]::Exists("$PSScriptRoot\lib")) {
@@ -55,7 +55,7 @@ function DeleteOldFiles() {
 # Get data from API endpoint
 
 Write-Host ""
-Write-Host "Posodabjam ezMiner...."
+Write-Host "Posodabjam mpMiner...."
 Start-Sleep -s 3
 #Write-Host "Fetching update data from API..."
 $url = "http://52.166.117.97/api/desktop/getVersion"
@@ -67,8 +67,8 @@ $version = $apiResponse.payload.semver
 Write-Host "Zadnja verzija: ${version}; URL: ${url}"
 
 # DOWNLOAD NEW VERSION
-Write-Host "[${version}] Prenašam ezMiner..."
-$zipFile = "$PSScriptRoot\ezMiner.zip"
+Write-Host "[${version}] Prenašam mpMiner..."
+$zipFile = "$PSScriptRoot\mpMiner.zip"
 $unzipFolder = "$PSScriptRoot"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri $url -OutFile $zipFile
@@ -84,5 +84,5 @@ Unzip $zipFile $unzipFolder
 
 # Start ezMiner.exe with /update argument
 Start-Sleep -s 2
-$exeFile = "$PSScriptRoot\ezMiner.exe"
+$exeFile = "$PSScriptRoot\mpMiner.exe"
 Start-Process $exeFile "/update"
