@@ -93,13 +93,13 @@
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="Rezident" type="Rezident_Type" maxOccurs="unbounded">
+			<xs:element name="Rezident" type="Rezident_Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="Detaziranost" type="Detaziranost_Type" maxOccurs="unbounded">
+			<xs:element name="Detaziranost" type="Detaziranost_Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation></xs:documentation>
 				</xs:annotation>
