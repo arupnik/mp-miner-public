@@ -1,172 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2007 (http://www.altova.com) by BrankoH (Hermes SoftLab d.d.) -->
-<xs:schema xmlns="file:///C:/Users/andrejr/Downloads/eOPPIS_OUT_1_REF.xsd"" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="file:///C:/Users/andrejr/Downloads/eOPPIS_OUT_1_REF.xsd"" elementFormDefault="qualified" attributeFormDefault="unqualified">
-  <xs:annotation>
-    <xs:documentation>
+<xs:schema xmlns="http://ddv.durs.si/Documents/Schemas/eOPPIS_OUT_1_REF.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ddv.durs.si/Documents/Schemas/eOPPIS_OUT_1_REF.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>
       Pripravil: Comtrade
       Datum: 9. 9. 2016
       Verzija: 1.0
       Opis: Izhodna shema eOPPIS
-    </xs:documentation>
-  </xs:annotation>
-  <xs:element name="Zaposleni">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="Zaposlen" type="ZaposlitevType" maxOccurs="unbounded">
-          <xs:annotation>
-            <xs:documentation xml:lang="sl">Array podatkov tipa Zaposleni</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="Zaposleni">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Zaposlen" type="ZaposlitevType" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation xml:lang="sl">Array podatkov tipa Zaposleni</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
-  <xs:complexType name="ZaposlitevType">
-    <xs:sequence>
-      <xs:element name="ZavId">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+	<xs:complexType name="ZaposlitevType">
+		<xs:sequence>
+			<xs:element name="ZavId">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             Davčna številka prejemnika
-          </xs:documentation>
-        </xs:annotation>
-        <xs:simpleType>
-          <xs:restriction base="xs:unsignedInt">
-            <xs:minInclusive value="10000000"/>
-            <xs:maxInclusive value="99999999"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="Ime" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minInclusive value="10000000"/>
+						<xs:maxInclusive value="99999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Ime" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             Ime zaposlenega
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Priimek" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Priimek" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             Priimek zaposlenega
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TedenskiSkladUr" type="xs:int">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TedenskiSkladUr" type="xs:int">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             TedenskiSkladUr
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ObdZaposlitveOd" type="xs:date">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ObdZaposlitveOd" type="xs:date">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             ObdZaposlitveOd
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ObdZaposlitveDo" type="xs:date" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ObdZaposlitveDo" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             ObdZaposlitveOd
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="DUR_ID" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DUR_ID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             DUR_ID
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="DIZ_ID" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DIZ_ID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             DIZ_ID
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="DRZ_ID" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DRZ_ID" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             DRZ_ID
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 
-      <xs:element name="Rezident" type="Rezident_Type" minOccurs="0" maxOccurs="unbounded">
-        <xs:annotation>
-          <xs:documentation></xs:documentation>
-        </xs:annotation>
-      </xs:element>
+			<xs:element name="Rezident" type="Rezident_Type" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:element>
 
-      <xs:element name="Detaziranost" type="Detaziranost_Type" minOccurs="0" maxOccurs="unbounded">
-        <xs:annotation>
-          <xs:documentation></xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+			<xs:element name="Detaziranost" type="Detaziranost_Type" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
-  <xs:complexType name="Rezident_Type">
-    <xs:sequence>
-      <xs:element name="SRZ_ID" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+	<xs:complexType name="Rezident_Type">
+		<xs:sequence>
+			<xs:element name="SRZ_ID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             * N - Nerezident ZAV_STAT_REZIDNET.SRZ_ID = 2
             * R - Rezident ZAV_STAT_REZIDNET.SRZ_ID = 1
             * Neznan - ZAV_STAT_REZIDNET.SRZ_ID = 0
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="OBD_REZ_OD" type="xs:date">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OBD_REZ_OD" type="xs:date">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             OBD_REZ_OD
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="OBD_REZ_DO" type="xs:date">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OBD_REZ_DO" type="xs:date">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             OBD_REZ_DO
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="DRZ_ID" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DRZ_ID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             ZAV_STAT_REZIDNET.DRZ_ID.
             V primeru da je NULL potem izpišemo Neznan
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
-  <xs:complexType name="Detaziranost_Type">
-    <xs:sequence>
-      <xs:element name="TZP_ID" type="xs:string">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+	<xs:complexType name="Detaziranost_Type">
+		<xs:sequence>
+			<xs:element name="TZP_ID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             Pojavi se samo v primeru da obstaja ZAPOSLITEV.TZP_ID = 002, vsa ostala zaposlitvena razmerja pustimo stran
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TZP_DTM_OD" type="xs:date">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TZP_DTM_OD" type="xs:date">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             TZP_DTM_OD
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TZP_DTM_DO" type="xs:date">
-        <xs:annotation>
-          <xs:documentation xml:lang="sl">
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TZP_DTM_DO" type="xs:date">
+				<xs:annotation>
+					<xs:documentation xml:lang="sl">
             TZP_DTM_DO
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
 </xs:schema>
