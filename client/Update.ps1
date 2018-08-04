@@ -1,6 +1,6 @@
 ﻿# ==================================================================
 # mpMiner updater
-# Current client version: 0.1.8
+# Current client version: 0.1.9
 # ==================================================================
 function Unzip($zipfile, $outdir) {
 
