@@ -1,11 +1,11 @@
-﻿# ==================================================================
+# ==================================================================
 # mpMiner updater
-# Current client version: 0.1.9
+# Current client version: 0.1.42
 # ==================================================================
 function Unzip($zipfile, $outdir) {
 
     Write-Host ""
-    Write-Host "Nameščam novo verzijo..."
+    Write-Host "Namescam novo verzijo..."
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $archive = [System.IO.Compression.ZipFile]::OpenRead($zipfile)
     foreach ($entry in $archive.Entries) {
@@ -22,13 +22,13 @@ function Unzip($zipfile, $outdir) {
             [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $entryTargetFilePath, $true);
         }
     }
-    Write-Host "Nova verzija nameščena."
+    Write-Host "Nova verzija namescena."
     Write-Host ""
 }
 
 function DeleteOldFiles() {
     Write-Host ""
-    Write-Host "Brišem staro verzijo..."
+    Write-Host "Brisem staro verzijo..."
 
     if ([System.IO.File]::Exists("$PSScriptRoot\mpMiner.exe")) {
         Remove-Item "$PSScriptRoot\mpMiner.exe" -Force
@@ -64,12 +64,12 @@ $version = $apiResponse.payload.semver
 Write-Host "Zadnja verzija: ${version}; URL: ${url}"
 
 # DOWNLOAD NEW VERSION
-Write-Host "[${version}] Prenašam mpMiner..."
+Write-Host "[${version}] Prenasam mpMiner..."
 $zipFile = "$PSScriptRoot\mpMiner.zip"
 $unzipFolder = "$PSScriptRoot"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri $url -OutFile $zipFile
-Write-Host "Prenos končan."
+Write-Host "Prenos koncan."
 
 # Delete old files
 Start-Sleep -s 2
